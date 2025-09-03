@@ -47,13 +47,12 @@ function cerrarImagen() {
 
 document.querySelectorAll(".categoria").forEach(cat => {
   cat.addEventListener("mouseenter", function () {
-    // Quitar "active" a todas las categorías
     document.querySelectorAll(".categoria").forEach(el => el.classList.remove("active"));
     this.classList.add("active");
 
-    // Ocultar todos los equipos
     document.querySelectorAll(".equipos-list").forEach(el => el.classList.add("d-none"));
-    // Mostrar solo la categoría seleccionada
     document.getElementById(this.dataset.target).classList.remove("d-none");
   });
 });
+
+

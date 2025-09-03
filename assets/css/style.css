@@ -1,5 +1,135 @@
 main {
-    padding-top: 84px;
+    padding-top: 80px;
+}
+
+/* Paleta de colores */
+:root {
+    --color-blanco: #FFFFFF;
+    --color-gris-medio: #777782;
+    --color-gris-oscuro: #787882;
+    --color-gris-oscuro2: rgb(95, 95, 105)2;
+    --color-gris-claro: #B8B8B8;
+    --color-azul-oscuro: #101123;
+    --color-gris-azulado: #8B8B94;
+    --color-negro: #000000;
+}
+
+/* Barra de navegación */
+.ContendNav {
+    background-color: var(--color-blanco) !important;
+    box-shadow: 0 6px 10px rgba(4, 0, 52, 0.57);
+}
+
+#NavScroll .nav-link.active {
+    color: inherit !important;
+    background-color: transparent !important;
+}
+
+/* Logo */
+.LogoNav {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.LogoNav:hover {
+    transform: scale(1.05);
+}
+
+/* Links */
+.nav-link {
+    color: var(--color-negro) !important;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+    padding: 6px 14px;
+}
+
+.nav-link:hover {
+    color: var(--color-blanco) !important;
+    background-color: #010654a7;
+}
+
+/* Activo (ejemplo para Inicio) */
+.nav-link.active {
+    background-color: #010754eb !important;
+}
+
+.nav-item {
+    position: relative;
+}
+
+/* Listado de equipos */
+.equipos-list ul li {
+    padding: 6px 0;
+}
+
+.dropdown-item:hover {
+    font-weight: 600;
+}
+
+/* Dropdown mega menu */
+.mega-menu {
+    width: 700px;
+    height: 350px;
+    max-width: 700px;
+    max-height: 350px;
+    padding: 20px;
+
+    opacity: 0;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+
+    position: absolute;
+    top: 100%;
+    left: -200px;
+
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-gris-claro);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mega-menu .equipos-col {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.nav-item:hover .mega-menu {
+    display: block;
+    opacity: 1;
+}
+
+.mega-menu h5,
+.mega-menu h6 {
+    color: var(--color-azul-oscuro);
+    font-weight: 600;
+}
+
+
+.mega-menu .dropdown-item {
+    color: var(--color-negro);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mega-menu .dropdown-item:hover,
+.mega-menu .dropdown-item:focus,
+.mega-menu .dropdown-item:active {
+    background-color: var(--color-gris-oscuro) !important;
+    color: var(--color-blanco) !important;
+    border-radius: 10px;
+}
+
+
+/* Iconos SVG */
+.nav-link svg {
+    margin-bottom: 2px;
+    fill: var(--color-negro);
+    transition: fill 0.3s ease;
+}
+
+.nav-link:hover svg {
+    fill: var(--color-blanco);
 }
 
 .feature-box {
@@ -33,6 +163,10 @@ main {
     background: linear-gradient(135deg, #f7f7ff, #fdf2f5);
 }
 
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
 
 .business-goal-one {
     position: relative;
@@ -149,11 +283,18 @@ main {
 }
 
 .ImagenNosotros {
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 1, 1);
     height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    transition: scale 0.3s ease;
 }
+
+.ImagenNosotros:hover {
+    scale: 1.05;
+}
+
 
 .textoNosotros {
     font-size: 3.5rem;
@@ -292,54 +433,8 @@ main {
     transform: scale(1.02);
 }
 
-
-/* NAVDESPLEGABLE DE SERVICIOS */
-
-.mega-menu {
-    width: 700px;
-    height: 350px;
-    max-width: 700px;
-    max-height: 350px;
-    padding: 20px;
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50px;
 }
-
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-    /* evita saltos */
-}
-
-.mega-menu .dropdown-item {
-    padding: 5px 10px;
-    transition: background 0.2s;
-}
-
-.mega-menu .dropdown-item:hover {
-    background-color: #f8f9fa;
-    color: #0d6efd;
-}
-
-
-/* Listado de categorías */
-.categorias ul li {
-    padding: 8px 0;
-}
-
-.categorias ul li a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    transition: all 0.2s;
-}
-
-.categorias ul li a:hover {
-    color: #0d6efd;
-    font-weight: 500;
-}
-
-/* Listado de equipos */
-.equipos-list ul li {
-    padding: 5px 0;
-}
-
-
